@@ -1,0 +1,36 @@
+@model Algan.WebUi.Models.ViewModels.VisionViewModel
+
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_navbarAdmin") 
+    </div>
+    <div class="col-10">
+        <div class="col-12 my-5">
+            <button type="button" class="btn btn-dark">
+                <a href="/admin/createvision" class="nav-link" >Yeni Vizyon Ekle</a>
+            </button>
+        </div>
+
+        @if(Model.AdminVision.Count() == 0)
+        {
+            @await Html.PartialAsync("_novision")
+        }
+        else
+        {              
+                @foreach (var vision in Model.AdminVision)
+                {    
+                    <div class="col-12">
+                        @await Html.PartialAsync("_adminVision",vision)
+                    </div>
+                    <a href="/admin/vision/@vision.VisionID" class="btn btn-danger btn-sm mr-2">Güncelle</a>
+
+                    <form action="/admin/deletevision" method="POST" style="display: inline;">
+                        <input type="hidden" name="VisionID" value="@vision.VisionID">
+                        <button type="submit" class="btn btn-danger btn-sm" >Sil</button>
+                    </form>
+
+                }   
+        }
+    </div>
+</div>

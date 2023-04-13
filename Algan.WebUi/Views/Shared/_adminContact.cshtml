@@ -1,0 +1,25 @@
+@model Contact   
+
+<div class="container my-5">
+        <div class="row justify-content-center align-items-center">
+                <div class="col-1">
+                        <h5 class="text-left">@Model.ContactID</h5>
+                </div>
+                <div class="col-3">
+                    <div class="col-12">
+                        <h5 class="text-left">@Model.FullName</h5>
+                    </div>
+                    <div class="col-12">
+                        <h5 class="text-left">@Model.Email</h5>
+                    </div>
+                    <div class="col-12">
+                        <h5 class="text-left">@Model.Topic</h5>
+                    </div>
+
+                </div>
+                <div class="col-8">
+                        <h5 class="text-left">@Model.Message</h5>
+                </div>
+                
+        </div>
+</div>

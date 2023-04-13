@@ -1,0 +1,14 @@
+@model Algan.WebUi.Models.ViewModels.ProjectViewModel
+@if(Model.AdminProjects.Count() == 0)
+{
+    @await Html.PartialAsync("_noproject")
+}
+else
+{              
+        @foreach (var project in Model.AdminProjects)
+        {    
+            <div class="col-12">
+                @await Html.PartialAsync("_project",project)
+            </div>       
+        }   
+}

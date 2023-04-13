@@ -1,0 +1,41 @@
+@model Algan.WebUi.Models.ViewModels.StreamViewModel
+
+<div class="fullScreen">
+    <div class="row" >
+        <div class="col-2">
+            @await Html.PartialAsync("_navbarAdmin") 
+        </div>
+        <div class="col-10">
+                    <div class="col-12 my-5">
+                <button type="button" class="btn btn-dark">
+                    <a href="/admin/createstream" class="nav-link" >Stream Link Ekle</a>
+                </button>
+            </div>
+            <div class="alert alert-danger">
+                <h1>Lütfen Youtube Linkinin ='den sonrasını yapıştırınız</h1>
+            </div>
+
+
+            @if(Model.AdminStream.Count() == 0)
+            {
+                @await Html.PartialAsync("_nostream")
+            }
+            else
+            {              
+                @foreach (var stream in Model.AdminStream)
+                {    
+                    <div class="col-12">
+                        @await Html.PartialAsync("_adminStream",stream)
+                    </div>       
+                    <a href="/admin/editstream/@stream.StreamID" class="btn btn-danger btn-sm mr-2">Güncelle</a>
+                    
+                    <form action="/admin/deletestream" method="POST" style="display: inline;">
+                        <input type="hidden" name="StreamID" value="@stream.StreamID">
+                        <button type="submit" class="btn btn-danger btn-sm" >Sil</button>
+                    </form>
+                }   
+            }
+        </div>
+    </div>
+    </div>
+ 

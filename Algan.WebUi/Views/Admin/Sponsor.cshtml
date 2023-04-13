@@ -1,0 +1,35 @@
+@model Algan.WebUi.Models.ViewModels.SponsorViewModel
+
+
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_navbarAdmin") 
+    </div>
+    <div class="col-10">
+       <div class="col-12 my-5">
+            <button type="button" class="btn btn-dark">
+                <a href="/admin/createsponsor" class="nav-link" >Yeni Sponsor Ekle</a>
+            </button>
+        </div>
+
+        @if(Model.AdminSponsor.Count() == 0)
+        {
+            @await Html.PartialAsync("_nosponsor")
+        }
+        else
+        {    
+            @foreach (var sponsor in Model.AdminSponsor)
+            {
+                
+                    @await Html.PartialAsync("_adminSponsor",sponsor)     
+                    <a href="/admin/sponsor/@sponsor.SponsorID" class="btn btn-danger btn-sm mr-2">Güncelle</a>
+
+                    <form action="/admin/deletesponsor" method="POST" style="display: inline;">
+                        <input type="hidden" name="SponsorID" value="@sponsor.SponsorID">
+                        <button type="submit" class="btn btn-danger btn-sm" >Sil</button>
+                    </form>  
+            }
+}
+    </div>
+</div>

@@ -1,0 +1,28 @@
+@model Footer
+
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-1">
+                    <h5 class="">@Model.FooterID</h5>
+                </div>
+                <div class="col-3 img-fluid">
+                    <img class="img-fluid" src="~/img/@Model.LogoUrl" alt="">
+                </div>
+                <div class="col-3">
+                    <h5 class="">@Model.InstagramLink</h5>
+                    <h5 class="">@Model.TwitterLink</h5>
+                    <h5 class="">@Model.LinkedinLink</h5>
+                    <h5 class="">@Model.YoutubeLink</h5>
+
+                </div>
+                <div class="col-3">
+                    <h5 class="">@Model.Mail</h5>
+                    <h5 class="">@Model.Adress</h5>
+                    <h5 class="">@Model.CompanyName</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

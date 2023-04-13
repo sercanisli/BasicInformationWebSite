@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algan Teknoloji Takımı</title>
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="icon" href="~/img/alganlogosu.ico" type="image/x-icon" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .fullScreen{
+            height: 100vh;
+            
+        }
+    </style>
+</head>
+<body> 
+    @await Html.PartialAsync("_navbar") 
+        <main class="p-0">
+            @RenderBody()
+        </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/style.js"></script>
+
+    <script src="~/js/slider.js"></script>
+    @RenderSection("Scripts",false)
+</body>       
+</html>

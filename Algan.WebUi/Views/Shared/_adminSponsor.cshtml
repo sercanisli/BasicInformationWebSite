@@ -1,0 +1,25 @@
+@model Sponsor
+
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-1">
+            <h5 class="">@Model.SponsorID</h5>
+        </div>
+        <div class="col-11">
+            <div class="row text-center justify-content-center align-items-center">
+                <div class="col-2 img-fluid">
+                    <img class="img-fluid" src="~/img/@Model.SponsorLogo" alt="">
+                </div>
+                <div class="col-5">
+                    <h5 class="">@Model.SponsorName</h5>
+                </div>
+                <div class="col-5">
+                    <h5 class="">@Model.SponsorTitle</h5>
+                    <h5 class="">@Model.SponsorUrl</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    

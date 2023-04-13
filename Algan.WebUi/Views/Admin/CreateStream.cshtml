@@ -1,0 +1,32 @@
+@model StreamModel
+
+
+<div class="row">
+        <div class="col-2">
+            @await Html.PartialAsync("_navbarAdmin") 
+        </div>
+        <div class="col-10">
+        <div class="row">
+            <div class="col-md-8">
+                <form asp-controller="Admin" asp-action ="CreateStream" method="POST">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="StreamUrl" class="col-form-label">Stream Link :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text"  class="form-control" asp-for="StreamUrl">
+                            <span asp-validation-for = "StreamUrl" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+</div>

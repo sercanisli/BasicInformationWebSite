@@ -1,0 +1,150 @@
+@model Algan.WebUi.Models.ViewModels.HomeViewModel
+
+
+@* <partial name="_header"> *@
+
+            <div class="fullScreen" style="background-color: #00BFA5;">
+                @if(Model.Streams.Count() == 0)
+                {
+                    @await Html.PartialAsync("_nostream")
+                }
+                else
+                {        
+                    @foreach (var streams in Model.Streams)
+                    {    
+                            @await Html.PartialAsync("_stream",streams) 
+                    }   
+                }
+            </div>
+     
+
+
+
+            <div class="fullScreen align-items-center" style="background-color: #111111; "> 
+                @if(Model.Missions.Count() == 0)
+                {
+                    @await Html.PartialAsync("_nomission")   
+                }
+                else
+                {              
+                        @foreach (var mission in Model.Missions) 
+                        {
+                                @await Html.PartialAsync("_mission",mission)  
+                        }   
+                }
+
+                <div class="" style="margin-top: 150px;"></div>
+                @if(Model.Visions.Count() == 0)
+                {
+                    @await Html.PartialAsync("_novision")
+                }
+                else
+                {        
+                    @foreach (var vision in Model.Visions)
+                    {    
+                            @await Html.PartialAsync("_vision",vision) 
+                    }   
+                }
+            </div>
+
+
+            <div class="fullScreen" style="background-color: #6A5ACD;">
+                <div class="row">
+                    <div class="col-12 text-center baslik baslikBoyutu mt-3">
+                    <h1>Ekibimiz</h1>
+                </div>
+                </div>
+                    <div class="swiper-container mySwiper">
+                        <div class="swiper-wrapper" >
+                                @if(Model.Persons.Count() == 0)
+                                {
+                                    @await Html.PartialAsync("_noperson")
+                                }
+                                else
+                                {    
+                                    @foreach (var person in Model.Persons)
+                                    {
+                                        <div class="swiper-slide">
+                                            <div class="col-3" >
+                                                @await Html.PartialAsync("_person",person)     
+                                            </div>  
+                                        </div>       
+                                    }
+                                }
+                        </div>
+                    </div> 
+
+                <div class="col-12 text-center baslik baslikBoyutu">
+                    <h1>Sponsorlarımız</h1>
+                </div>
+                    <div class="row"></div>
+
+                    <div class="swiper-container mySwiper">
+                        <div class="swiper-wrapper" >
+                                @if(Model.Sponsors.Count() == 0)
+                                {
+                                    @await Html.PartialAsync("_nosponsor")
+                                }
+                                else
+                                {    
+                                    @foreach (var sponsor in Model.Sponsors)
+                                    {   
+                                        <div class="swiper-slide">
+                                            <div class="col-3 text-center">
+                                                @await Html.PartialAsync("_sponsor",sponsor)     
+                                            </div>  
+                                        </div>       
+                                    }
+                                }
+                        </div>
+                    </div> 
+                </div>
+            </div>
+   
+
+             
+   
+            <div class="fullScreen" style="background-color: #60abd4;">
+                    <div class="col-12 text-center baslik baslikBoyutu mt-3">
+                    <h1>Fotoğraf Galerisi</h1>
+                    </div>
+                    <div class="swiper mySwiper2 mt-5 ">
+                        <div class="swiper-wrapper" >
+                                @if(Model.Photos.Count() == 0)
+                                {
+                                    @await Html.PartialAsync("_nophoto")
+                                }
+                                else
+                                {    
+                                    @foreach (var photo in Model.Photos)  
+                                    {
+                                        <div class="col-12 swiper-slide PhotoSlider" style="width: 90%;">
+                                                @await Html.PartialAsync("_photo",photo)      
+                                        </div>       
+                                    }
+                                }
+                        </div>
+                        <div class="swiper-button-next"></div> 
+                        <div class="swiper-button-prev"></div>
+                    </div>
+            </div>
+
+
+    <footer class="footerGradient text-white text-center">
+        @if(Model.Footers.Count() == 0)
+            {
+                @await Html.PartialAsync("_nofooter")
+            }
+        else
+            {    
+                @foreach (var footer in Model.Footers)  
+                {
+                    @await Html.PartialAsync("_footer",footer)     
+                }
+            }
+    </footer>
+@section Scripts
+{
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+}

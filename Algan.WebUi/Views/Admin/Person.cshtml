@@ -1,0 +1,34 @@
+@model Algan.WebUi.Models.ViewModels.PersonViewModel
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_navbarAdmin") 
+    </div>
+    <div class="col-10">
+        <div class="col-12 my-5">
+            <button type="button" class="btn btn-dark">
+                <a href="/admin/createperson" class="nav-link" >Yeni Ekip Üyesi Ekle</a>
+            </button>
+        </div>
+
+
+        @if(Model.AdminPersons.Count() == 0)
+        {
+            @await Html.PartialAsync("_noperson")
+        }
+        else
+        {    
+            @foreach (var person in Model.AdminPersons)
+            {
+                    @await Html.PartialAsync("_adminPerson",person)     
+                <a href="/admin/person/@person.PersonID" class="btn btn-danger btn-sm mr-2">Güncelle</a>
+                
+                <form action="/admin/deleteperson" method="POST" style="display: inline;">
+                    <input type="hidden" name="PersonID" value="@person.PersonID">
+                    <button type="submit" class="btn btn-danger btn-sm" >Sil</button>
+                </form>
+            }
+        }
+
+    </div>
+</div>

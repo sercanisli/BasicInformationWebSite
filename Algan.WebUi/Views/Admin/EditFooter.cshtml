@@ -1,0 +1,113 @@
+@model FooterModel
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_navbarAdmin") 
+    </div>
+    <div class="col-10">
+        <div class="row">
+            <div class="col-md-8">
+                <form asp-controller="Admin" asp-action ="EditFooter" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="FooterID" value="@Model.FooterID">  
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="InstagramLink" class="col-form-label">Instagram Link :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input class="form-control" asp-for="InstagramLink">
+                            <span asp-validation-for = "InstagramLink" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="LinkedinLink" class="col-form-label">Linkedin Link :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input class="form-control" asp-for="LinkedinLink">
+                            <span asp-validation-for = "LinkedinLink" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="TwitterLink" class="col-form-label">Twitter Link :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input class="form-control" asp-for="TwitterLink">
+                            <span asp-validation-for = "TwitterLink" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="YoutubeLink" class="col-form-label">Youtube Link :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input class="form-control" asp-for="YoutubeLink">
+                            <span asp-validation-for = "YoutubeLink" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="Mail" class="col-form-label">Mail :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input class="form-control" asp-for="Mail">
+                            <span asp-validation-for = "Mail" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="Adress" class="col-form-label">Adres :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input class="form-control" asp-for="Adress">
+                            <span asp-validation-for = "Adress" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="LogoUrl" class="col-form-label">Logo :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="hidden" asp-for="LogoUrl">
+                            <img src="~/img/@Model.LogoUrl" width="80">
+                            <input type="file"name="file" >
+                            <span asp-validation-for = "LogoUrl" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label asp-for="CompanyName" class="col-form-label">Şirket :</label>
+                        </div>
+                        <div class="col-auto">
+                            <input class="form-control" asp-for="CompanyName">
+                            <span asp-validation-for = "CompanyName" class="text-danger"></span>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

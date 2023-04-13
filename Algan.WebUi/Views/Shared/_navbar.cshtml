@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    
+</head>
+<body>
+    <div class="navbar navbar-dark bg-dark navbar-expand-sm" style="height: 75px;">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li class="nav item">
+                <a href="/home/index" class="nav-link navbarYazi">Algan</a>
+            </li>
+            <li class="nav item">
+                <a href="/home/project" class="nav-link navbarYazi">Projelerimiz</a>
+            </li>
+            <li class="nav item">
+                <a href="/home/contact" class="nav-link navbarYazi">İletişim</a>
+            </li>
+            <li class="nav item">
+                <a href="/home/aboutus" class="nav-link navbarYazi">Hakkımızda</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="dropdown">
+                    <button class="dropbtn">Admin</button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="/admin/adminPage">Admin</a>
+                        <a class="dropdown-item" href="/account/logOut">Çıkış</a>
+                    </div>
+                </div>
+            } 
+            else
+            {
+                <li class="nav item ">
+                    <a href="/account/logIn" class="nav-link navbarYazi">Giriş Yap</a>
+                </li> 
+            }
+        </ul>
+    </div>
+</div>
+</body>
+</html>

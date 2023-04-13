@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<ItemGroup>
+    <ProjectReference Include="..\Algan.Entity\Algan.Entity.csproj" /> 
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Algan.Data\Algan.Data.csproj" /> 
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+@model Project
+<div class="container my-5 radius2 gradient "> 
+    <div class="row justify-content-center align-items-center ">
+        <input type="hidden" name="ProjectID" value="@Model.ProjectID">   
+        <div class="col-12 mt-5" style="height: 250px;">
+            <div class="row text-center justify-content-center align-items-center">
+                <div class="col-5 img-fluid">
+                    <img class="img-fluid projectDetailPhoto"  src="~/img/@Model.ProjectPhoto" alt="">   
+                </div>
+                <div class="col-5 yazi ">
+                    <h5 class="">@Model.ProjectName</h5>
+                    
+                </div>
+                <div class="col-2 yazi yaziBoyutu ">
+                    <a  asp-controller="Home" asp-action="ProjectDetail" asp-route-id="@Model.ProjectID" class="white">Detay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

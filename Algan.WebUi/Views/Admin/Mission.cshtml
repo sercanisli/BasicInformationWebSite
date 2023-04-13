@@ -1,0 +1,34 @@
+@model Algan.WebUi.Models.ViewModels.MissionViewModel
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_navbarAdmin") 
+    </div>
+    <div class="col-10">
+       <div class="col-12 my-5">
+            <button type="button" class="btn btn-dark">
+                <a href="/admin/createmission" class="nav-link" >Yeni Misyon Ekle</a>
+            </button>
+        </div>
+
+        @if(Model.AdminMissions.Count() == 0)
+        {
+            @await Html.PartialAsync("_nomission")
+        }
+        else
+        {              
+                @foreach (var mission in Model.AdminMissions)
+                {    
+                    <div class="col-12">
+                        @await Html.PartialAsync("_adminMission",mission)
+                    </div>       
+                    <a href="/admin/editmission/@mission.MissionID" class="btn btn-danger btn-sm mr-2">Güncelle</a>
+                    
+                    <form action="/admin/deletemission" method="POST" style="display: inline;">
+                        <input type="hidden" name="MissionID" value="@mission.MissionID">
+                        <button type="submit" class="btn btn-danger btn-sm" >Sil</button>
+                    </form>
+                }   
+        }
+    </div>
+</div>

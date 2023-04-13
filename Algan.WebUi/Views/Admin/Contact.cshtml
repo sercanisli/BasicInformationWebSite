@@ -1,0 +1,27 @@
+@model Algan.WebUi.Models.ViewModels.ContactViewModel
+
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_navbarAdmin") 
+    </div>
+    <div class="col-10">
+        @if(Model.AdminContacts.Count() == 0)
+        {
+            @await Html.PartialAsync("_nocontact")
+        }
+        else
+        {              
+                @foreach (var contact in Model.AdminContacts)
+                {    
+                    <div class="col-12">
+                        @await Html.PartialAsync("_adminContact",contact)
+                    </div>       
+                    <form action="/admin/deletecontact" method="POST" style="display: inline;">
+                        <input type="hidden" name="ContactID" value="@contact.ContactID">
+                        <button type="submit" class="btn btn-danger btn-sm" >Sil</button>
+                    </form>
+                }   
+        }
+    </div>
+</div>

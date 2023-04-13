@@ -1,0 +1,34 @@
+@model Algan.WebUi.Models.ViewModels.ProjectViewModel
+
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_navbarAdmin") 
+    </div>
+    <div class="col-10">
+        <div class="col-12 my-5">
+            <button type="button" class="btn btn-dark">
+                <a href="/admin/createproject" class="nav-link" >Yeni Proje Bilgisi Ekle</a>
+            </button>
+        </div>
+
+        @if(Model.AdminProjects.Count() == 0)
+        {
+            @await Html.PartialAsync("_noproject")
+        }
+        else
+        {    
+            @foreach (var project in Model.AdminProjects)
+            {
+                
+                    @await Html.PartialAsync("_adminProject",project)     
+                    <a href="/admin/project/@project.ProjectID" class="btn btn-danger btn-sm mr-2">Güncelle</a>
+
+                    <form action="/admin/deleteproject" method="POST" style="display: inline;">
+                        <input type="hidden" name="ProjectID" value="@project.ProjectID">
+                        <button type="submit" class="btn btn-danger btn-sm" >Sil</button>
+                    </form>  
+            }
+        }
+    </div>
+</div>

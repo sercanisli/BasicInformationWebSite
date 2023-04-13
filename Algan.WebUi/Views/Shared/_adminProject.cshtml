@@ -1,0 +1,23 @@
+@model Project
+
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-1">
+            <h5 class="">@Model.ProjectID</h5>
+        </div>
+        <div class="col-11">
+            <div class="row text-center justify-content-center align-items-center">
+                <div class="col-2 img-fluid">
+                    <img class="img-fluid" src="~/img/@Model.ProjectPhoto" alt="">
+                </div>
+                <div class="col-3">
+                    <h5 class="">@Model.ProjectName</h5>
+                    <h5 class="">@Model.ProjectYoutubeUrl</h5>
+                </div>
+                <div class="col-7">
+                    <h5 class="">@Html.Raw(Model.ProjectDescription)</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

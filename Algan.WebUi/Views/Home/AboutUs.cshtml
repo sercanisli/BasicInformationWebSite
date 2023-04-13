@@ -1,0 +1,15 @@
+@model Algan.WebUi.Models.ViewModels.AboutUsViewModel
+@if(Model.AdminAboutUsses.Count() == 0)
+{
+    @await Html.PartialAsync("_noaboutus")
+}
+else
+{              
+        @foreach (var aboutUs in Model.AdminAboutUsses)
+        {    
+            <div class="col-12">
+                @await Html.PartialAsync("_aboutUs",aboutUs)
+            </div>       
+        }   
+}
+

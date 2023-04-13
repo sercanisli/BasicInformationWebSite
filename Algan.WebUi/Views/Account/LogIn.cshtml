@@ -1,0 +1,35 @@
+@model LogInModel
+
+
+
+<div class="row fullScreen" style="background-color: #3cb371;" >
+        <div class="col-12 text-center">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12" style="margin-top: 250px;">
+                    <form asp-controller="Account" asp-action ="LogIn" method="POST">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-5 text-end">
+                                <label asp-for="UserName" class="col-form-label">Kullanıcı Adı :</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="text"  class="form-control" asp-for="UserName">
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center text-end">
+                            <div class="col-5">
+                                <label asp-for="Password" class="col-form-label">Şifre :</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="text"  class="form-control" asp-for="Password">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 mt-3">
+                                <button type="submit" class="btn btn-primary" style="width: 270px;">Giriş</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div> 

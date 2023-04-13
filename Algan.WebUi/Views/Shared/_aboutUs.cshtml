@@ -1,0 +1,11 @@
+@model AboutUs
+<div class="container">
+        <div class="row my-5 text-center justify-content-center align-items-center">
+                <div class="col-12 my-5 baslik baslikBoyutu" style="color:black">
+                    <h1>@Model.AboutUsTitle</h1>
+                </div>
+                <div class="col-12 my-5 text-center yazi" style="color:black">
+                            <p>@Html.Raw(Model.AboutUsText)</p>  
+                </div>
+        </div>
+</div>

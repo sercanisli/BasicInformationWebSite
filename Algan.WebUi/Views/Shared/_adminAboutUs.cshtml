@@ -1,0 +1,18 @@
+@model AboutUs
+<div class="container">
+        <div class="row">
+                <div class="col-1">
+                    <h5 class="">@Model.AboutUsID</h5>
+                </div>
+                <div class="col-4">
+                        <div class=" mb-2">
+                                <h5 class="">@Html.Raw(Model.AboutUsTitle)</h5> 
+                        </div>
+                </div>
+                <div class="col-7">
+                        <div class=" mb-2">
+                                <h5 class="">@Html.Raw(Model.AboutUsText)</h5> 
+                        </div>
+                </div>
+        </div>
+</div>
